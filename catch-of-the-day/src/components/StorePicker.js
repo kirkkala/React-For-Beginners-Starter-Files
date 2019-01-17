@@ -19,9 +19,11 @@ class StorePicker extends React.Component {
     event.preventDefault();
     // 2. Get text from input
     // Tutorials was talking about "value" but clearly is "current" of the object.
-    console.log(this.myInput.current.value);
+    const storeName = this.myInput.current.value;
 
-    // 3. Change the page to /store/input
+    // 3. Change the page to /store/input-value
+    this.props.history.push(`/store/${storeName}`);
+
   }
 
   render() {
