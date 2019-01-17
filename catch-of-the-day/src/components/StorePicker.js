@@ -1,6 +1,6 @@
 // Always import react to the components!
 import React from "react";
-import { getFunName} from "../helpers";
+import { getFunName } from "../helpers";
 
 // Stir the sauce.
 class StorePicker extends React.Component {
@@ -18,7 +18,8 @@ class StorePicker extends React.Component {
     // 1. Stop form from submitting
     event.preventDefault();
     // 2. Get text from input
-    console.log(this);
+    // Tutorials was talking about "value" but clearly is "current" of the object.
+    console.log(this.myInput.current.value);
 
     // 3. Change the page to /store/input
   }
