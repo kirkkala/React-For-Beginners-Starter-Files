@@ -1,5 +1,6 @@
 import React from "react";
 
+// eslint-disable-next-line
 {/**
  Stateless functional component
   ...is creating it as "const" instead of
