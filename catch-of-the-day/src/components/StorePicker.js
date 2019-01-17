@@ -10,7 +10,6 @@ class StorePicker extends React.Component {
         {/* <React.Fragment> should also work as empty tag (<>) */}
         <form action="" className="store-selector">
           <h2>Enter a store</h2>
-          <h2 />
           <input type="text" required placeholder="Store name" />
           <button type="submit">Visit store &rarr;</button>
         </form>
