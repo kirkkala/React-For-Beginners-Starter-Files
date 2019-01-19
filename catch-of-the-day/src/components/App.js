@@ -77,6 +77,7 @@ class App extends React.Component {
         <Inventory
           addFish={this.addFish}
           loadSampleFishes={this.loadSampleFishes}
+          storeId={this.props.match.params.storeId}
         />
       </div>
     )
