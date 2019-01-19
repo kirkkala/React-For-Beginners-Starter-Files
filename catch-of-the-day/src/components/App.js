@@ -4,12 +4,28 @@ import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
+import base from "../base";
 
 class App extends React.Component {
   state = {
     fishes: {},
     order: {}
   };
+
+  // Mount and sync to Firebase
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: "fishes"
+    });
+  }
+
+  componentWillUnmount() {
+    // Clean up memory issues.
+    base.removeBinding(this.ref);
+  };
+
   addFish = (fish) => {
     // 1. Make a copy of existing state
     // OBJECT SPREAD = "..."
